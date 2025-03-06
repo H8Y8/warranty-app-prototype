@@ -9,79 +9,106 @@
 </head>
 <body>
     <div id="app">
+        <!-- 導航欄 -->
+        <div id="navigation-bar">
+            <h1 id="navigation-title">我的保固記錄</h1>
+            <button id="back-button" style="display: none;"><i class="fas fa-arrow-left"></i></button>
+        </div>
+
         <!-- 首頁 -->
         <div id="home" class="page">
-            <h1>我的保固記錄</h1>
-            <button id="add-new"><i class="fas fa-plus"></i></button>
             <ul id="warranty-list">
                 <li>
-                    <strong>產品A</strong><br>
-                    保固到期：2023-12-31<br>
                     <img src="https://via.placeholder.com/50" alt="產品A" width="50">
+                    <div>
+                        <strong>產品A</strong><br>
+                        保固到期：2023-12-31
+                    </div>
                 </li>
                 <li>
-                    <strong>產品B</strong><br>
-                    保固到期：2024-06-30<br>
                     <img src="https://via.placeholder.com/50" alt="產品B" width="50">
+                    <div>
+                        <strong>產品B</strong><br>
+                        保固到期：2024-06-30
+                    </div>
                 </li>
             </ul>
         </div>
 
         <!-- 添加新記錄頁面 -->
         <div id="add-record" class="page" style="display: none;">
-            <h1>添加新記錄</h1>
             <form>
-                <label for="product-name">產品名稱：</label>
-                <input type="text" id="product-name" name="product-name"><br>
-                <label for="purchase-date">購買日期：</label>
-                <input type="date" id="purchase-date" name="purchase-date"><br>
-                <label for="warranty-period">保固期限：</label>
-                <select id="warranty-period" name="warranty-period">
-                    <option value="1">1年</option>
-                    <option value="2">2年</option>
-                    <option value="3">3年</option>
-                </select><br>
-                <label for="photo">上傳照片：</label>
-                <input type="file" id="photo" name="photo"><br>
+                <div class="form-group">
+                    <label for="product-name">產品名稱</label>
+                    <input type="text" id="product-name" name="product-name">
+                </div>
+                <div class="form-group">
+                    <label for="purchase-date">購買日期</label>
+                    <input type="date" id="purchase-date" name="purchase-date">
+                </div>
+                <div class="form-group">
+                    <label for="warranty-period">保固期限</label>
+                    <select id="warranty-period" name="warranty-period">
+                        <option value="1">1年</option>
+                        <option value="2">2年</option>
+                        <option value="3">3年</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="photo">上傳照片</label>
+                    <input type="file" id="photo" name="photo">
+                </div>
                 <button type="submit">保存</button>
             </form>
         </div>
 
         <!-- 詳細信息頁面 -->
         <div id="detail" class="page" style="display: none;">
-            <h1>保固詳細信息</h1>
-            <p>產品名稱：<span id="detail-name">產品A</span></p>
-            <p>購買日期：<span id="detail-purchase-date">2022-12-31</span></p>
-            <p>保固期限：<span id="detail-warranty-period">1年</span></p>
-            <p>保固到期日期：<span id="detail-expiry-date">2023-12-31</span></p>
-            <img id="detail-photo" src="https://via.placeholder.com/150" alt="產品照片">
+            <div class="detail-info">
+                <p><strong>產品名稱：</strong><span id="detail-name">產品A</span></p>
+                <p><strong>購買日期：</strong><span id="detail-purchase-date">2022-12-31</span></p>
+                <p><strong>保固期限：</strong><span id="detail-warranty-period">1年</span></p>
+                <p><strong>保固到期日期：</strong><span id="detail-expiry-date">2023-12-31</span></p>
+                <img id="detail-photo" src="https://via.placeholder.com/150" alt="產品照片">
+            </div>
             <button id="share"><i class="fas fa-share"></i> 分享</button>
         </div>
 
         <!-- 搜尋頁面 -->
         <div id="search" class="page" style="display: none;">
-            <h1>搜尋</h1>
-            <input type="text" id="search-bar" placeholder="輸入關鍵字">
+            <input type="text" id="search-bar" placeholder="搜尋...">
             <ul id="search-results">
                 <li>
-                    <strong>產品A</strong><br>
-                    保固到期：2023-12-31<br>
                     <img src="https://via.placeholder.com/50" alt="產品A" width="50">
+                    <div>
+                        <strong>產品A</strong><br>
+                        保固到期：2023-12-31
+                    </div>
                 </li>
             </ul>
         </div>
 
         <!-- 設置頁面 -->
         <div id="settings" class="page" style="display: none;">
-            <h1>設置</h1>
-            <label for="notification">開啟保固到期提醒：</label>
-            <input type="checkbox" id="notification" name="notification"><br>
-            <label for="reminder-time">提醒時間：</label>
-            <select id="reminder-time" name="reminder-time">
-                <option value="1">1天前</option>
-                <option value="7">1週前</option>
-                <option value="30">1個月前</option>
-            </select><br>
+            <div class="form-group">
+                <label for="notification">開啟保固到期提醒</label>
+                <input type="checkbox" id="notification" name="notification">
+            </div>
+            <div class="form-group">
+                <label for="reminder-time">提醒時間</label>
+                <select id="reminder-time" name="reminder-time">
+                    <option value="1">1天前</option>
+                    <option value="7">1週前</option>
+                    <option value="30">1個月前</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 底部標籤欄 -->
+        <div id="tab-bar">
+            <button id="home-tab"><i class="fas fa-home"></i> 首頁</button>
+            <button id="search-tab"><i class="fas fa-search"></i> 搜尋</button>
+            <button id="settings-tab"><i class="fas fa-cog"></i> 設置</button>
         </div>
     </div>
 </body>
