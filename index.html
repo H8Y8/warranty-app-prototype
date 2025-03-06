@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的保固記錄</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 首頁 -->
+        <div id="home" class="page">
+            <h1>我的保固記錄</h1>
+            <button id="add-new"><i class="fas fa-plus"></i></button>
+            <ul id="warranty-list">
+                <li>
+                    <strong>產品A</strong><br>
+                    保固到期：2023-12-31<br>
+                    <img src="https://via.placeholder.com/50" alt="產品A" width="50">
+                </li>
+                <li>
+                    <strong>產品B</strong><br>
+                    保固到期：2024-06-30<br>
+                    <img src="https://via.placeholder.com/50" alt="產品B" width="50">
+                </li>
+            </ul>
+        </div>
+
+        <!-- 添加新記錄頁面 -->
+        <div id="add-record" class="page" style="display: none;">
+            <h1>添加新記錄</h1>
+            <form>
+                <label for="product-name">產品名稱：</label>
+                <input type="text" id="product-name" name="product-name"><br>
+                <label for="purchase-date">購買日期：</label>
+                <input type="date" id="purchase-date" name="purchase-date"><br>
+                <label for="warranty-period">保固期限：</label>
+                <select id="warranty-period" name="warranty-period">
+                    <option value="1">1年</option>
+                    <option value="2">2年</option>
+                    <option value="3">3年</option>
+                </select><br>
+                <label for="photo">上傳照片：</label>
+                <input type="file" id="photo" name="photo"><br>
+                <button type="submit">保存</button>
+            </form>
+        </div>
+
+        <!-- 詳細信息頁面 -->
+        <div id="detail" class="page" style="display: none;">
+            <h1>保固詳細信息</h1>
+            <p>產品名稱：<span id="detail-name">產品A</span></p>
+            <p>購買日期：<span id="detail-purchase-date">2022-12-31</span></p>
+            <p>保固期限：<span id="detail-warranty-period">1年</span></p>
+            <p>保固到期日期：<span id="detail-expiry-date">2023-12-31</span></p>
+            <img id="detail-photo" src="https://via.placeholder.com/150" alt="產品照片">
+            <button id="share"><i class="fas fa-share"></i> 分享</button>
+        </div>
+
+        <!-- 搜尋頁面 -->
+        <div id="search" class="page" style="display: none;">
+            <h1>搜尋</h1>
+            <input type="text" id="search-bar" placeholder="輸入關鍵字">
+            <ul id="search-results">
+                <li>
+                    <strong>產品A</strong><br>
+                    保固到期：2023-12-31<br>
+                    <img src="https://via.placeholder.com/50" alt="產品A" width="50">
+                </li>
+            </ul>
+        </div>
+
+        <!-- 設置頁面 -->
+        <div id="settings" class="page" style="display: none;">
+            <h1>設置</h1>
+            <label for="notification">開啟保固到期提醒：</label>
+            <input type="checkbox" id="notification" name="notification"><br>
+            <label for="reminder-time">提醒時間：</label>
+            <select id="reminder-time" name="reminder-time">
+                <option value="1">1天前</option>
+                <option value="7">1週前</option>
+                <option value="30">1個月前</option>
+            </select><br>
+        </div>
+    </div>
+</body>
+</html>
